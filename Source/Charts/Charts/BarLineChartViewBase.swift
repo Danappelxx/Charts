@@ -784,8 +784,6 @@ open class BarLineChartViewBase: ChartViewBase, BarLineScatterCandleBubbleChartD
                 }
                 
                 _isDragging = false
-                
-                delegate?.chartViewDidEndPanning?(self)
             }
             
             if _outerScrollView !== nil
@@ -793,6 +791,8 @@ open class BarLineChartViewBase: ChartViewBase, BarLineScatterCandleBubbleChartD
                 _outerScrollView?.nsuiIsScrollEnabled = true
                 _outerScrollView = nil
             }
+            
+            delegate?.chartViewDidEndPanning?(self)
         }
     }
     
